@@ -44,6 +44,7 @@ public class Telegram extends TelegramLongPollingBot {
                     console.addDataSource(vkApi);
                     Main.telegramConsoleDictionary.put(chatId.toString(), console);
 
+                    System.out.println("Start dialogue");
                     console.startDialog();
                     } catch (IOException e1) {
                         e1.printStackTrace();
@@ -56,8 +57,10 @@ public class Telegram extends TelegramLongPollingBot {
         else {
             var console = Main.telegramConsoleDictionary.get(chatId.toString());
             var in = console.in;
-            if (txt != null)
-                ((TelegramInputStream)in).addData(txt);
+            if (txt != null) {
+                ystem.out.println("Get " + txt);
+                ((TelegramInputStream) in).addData(txt);
+            }
             else
                 sendMsg(msg, "Да, я тоже люблю стикеры, картинки и тд, но я не умею работать с этим");
 
@@ -65,7 +68,7 @@ public class Telegram extends TelegramLongPollingBot {
                 try {
                     StopConsole(console);
                 } catch (InterruptedException e1) {
-                    e1.printStackTrace();
+                    System.out.println("Stop dialogue");
                 }
             }
         }
