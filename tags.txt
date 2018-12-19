@@ -1,0 +1,9 @@
+javascript
+python
+programming
+вакансия
+sorting
+gamedev
+java
+design
+cryptography
