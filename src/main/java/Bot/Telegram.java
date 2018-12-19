@@ -58,7 +58,7 @@ public class Telegram extends TelegramLongPollingBot {
             var console = Main.telegramConsoleDictionary.get(chatId.toString());
             var in = console.in;
             if (txt != null) {
-                ystem.out.println("Get " + txt);
+                System.out.println("Get " + txt);
                 ((TelegramInputStream) in).addData(txt);
             }
             else
